@@ -13,8 +13,8 @@ const Grid_withRecolt = () => {
   // Récupérer les villageois depuis l'API
   useEffect(() => {
     const fetchVillagers = async () => {
-      const token = "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2VG5aX1o4WlM2YTlYczJqckl4RTZLS0lNbjgyaTdxN3Z4cTRtY3dQOE13In0.eyJleHAiOjE3NDI4MTM0MjIsImlhdCI6MTc0MjY0MDYyMiwianRpIjoiZTdjMTA0YjQtY2UwMy00OTk0LWE1ZmItOWQwZmYzYWExMWE3IiwiaXNzIjoiaHR0cDovLzUxLjIxMC4xMTcuMjI6ODA4MS9yZWFsbXMvY29kZWxlbWFucyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1MmIwOGFiNS0yZmZmLTQ2NDEtYmNjNC0xZGQzZTFiMjdiOTYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJ3b2xvbG8tYmFja2VuZCIsInNlc3Npb25fc3RhdGUiOiIxYWQxMmZkZi1mYzI1LTQ3NDQtYTQwZC04NGRiYjFkODBjYjkiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtY29kZWxlbWFucyIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjFhZDEyZmRmLWZjMjUtNDc0NC1hNDBkLTg0ZGJiMWQ4MGNiOSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiYXRheSIsInRlYW1faWQiOiJlOGNlZDFhMi0wMWQzLTRhY2QtYTYxNC00OGQ0NTk3YWZiNzMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJsZXMtcHJvdGVjdGV1cnMtZHVyYWJsZXMiLCJnaXZlbl9uYW1lIjoiYXRheSJ9.dknHDd0j1BWG0xdDaMxoZcW_WSsTIrVYakObvRaFlIXW-8WNqlNPsEmyKisMpxZdYQG7T2i8YjH9Nyds3NBLowehn-3p68imCerXmdNHoQCHQ-tNMXy5vvYvf97kdSIFADsOu2LvwBq2IvzHV3_kQP5aqQXgNArnyqn36ktHrWjvoxkVuOm6xlbN-yPOnGOtxsP7X4l9nGxf8KIb84EXff7SRTbt6aJc_AlBWT5MgljsXoTYNiaKDiRS3XvYuOD7Z-0nz57FGkGObmLKmYkO48vo3VcaaarOM0zXOYd3WVyOpSviX5jmvz86NWysRitarAPUgH6r38BnJsqjTazZ7A";
-      const url = "http://51.210.117.22:8080/equipes/e8ced1a2-01d3-4acd-a614-48d4597afb73/villageois";
+      const token = "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2VG5aX1o4WlM2YTlYczJqckl4RTZLS0lNbjgyaTdxN3Z4cTRtY3dQOE13In0.eyJleHAiOjE3NDI4NjE1MTcsImlhdCI6MTc0MjY4ODcxNywianRpIjoiNzMwZWVmYTQtODQzNS00YjFlLWE0NWMtMzdiNjY5YTRlNTVhIiwiaXNzIjoiaHR0cDovLzUxLjIxMC4xMTcuMjI6ODA4MS9yZWFsbXMvY29kZWxlbWFucyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJlYTY2OTNlNi03MTJjLTRhMjYtYjU0OS05YmRhZTQ4MmJiMjgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJ3b2xvbG8tYmFja2VuZCIsInNlc3Npb25fc3RhdGUiOiJjYmZkMjIzNS1lMTYzLTQ4Y2YtOTRkMi03MmE0ZDA5MGQ5NWMiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtY29kZWxlbWFucyIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImNiZmQyMjM1LWUxNjMtNDhjZi05NGQyLTcyYTRkMDkwZDk1YyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiYXRheSIsInRlYW1faWQiOiI1OTNhOGNjMS1iYmVjLTRjNGQtYTNhZi1lOTI2YzEzMjRlMzMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJsZXMtcHJvdGVjdGV1cnMtZHVyYWJsZXMtZGV1eCIsImdpdmVuX25hbWUiOiJhdGF5In0.jJ-MRMYihh8gI6BU_1J5KLc_VlyUFHTXt5b2T2D3DnlDkMxO62I4S0tDIr60EqLe_xRI3HwAFTVstnfsQMwefaAHpCmuzn-i333a4OFurTb9AK-P6o0Ptlij7GF58gk0l0iyOfn0W001xVwzCEKxmBfuD3u-9yyTdSGXeaGzxPhSkpJGBGwo7fDcRtLyRKr9UWpkCjg42UUFR3os1pdSqmQWY0HZ9OfJ1Wb9RfK2OXxG42f8hHlMHGemguh7pGuWGqXlditEjqBwDdcdQ_DNxjeRytJrgo_0p7kbZmXsb5gteY6aTHNUvBpTFjopPIF_HtlezvqV1449xvpOa_rlsg";
+      const url = "http://51.210.117.22:8080/equipes/593a8cc1-bbec-4c4d-a3af-e926c1324e33/villageois";
 
       const response = await fetch(url, {
         method: 'GET',
@@ -48,6 +48,7 @@ const Grid_withRecolt = () => {
   };
 
   // Fonction pour générer la grille avec les coordonnées
+  // Fonction pour générer la grille avec les coordonnées
   const generateGrid = () => {
     let grid = [];
     // Remplir la grille avec les coordonnées inversées
@@ -61,6 +62,7 @@ const Grid_withRecolt = () => {
   };
   
   
+
 
   const [hoveredCell, setHoveredCell] = useState(null);
 
@@ -78,6 +80,7 @@ const Grid_withRecolt = () => {
 
     const villager = villagers.find(v => v.idVillageois === selectedCheckboxId);
 
+
     if (villager) {
       let newX = villager.positionX;
       let newY = villager.positionY;
@@ -92,7 +95,6 @@ const Grid_withRecolt = () => {
         villager.positionX = newX;
         villager.positionY = newY;
       
-      
       // Mettre à jour les coordonnées du villageois localement
       setVillagers(prevVillagers => 
         prevVillagers.map(v => 
@@ -103,8 +105,8 @@ const Grid_withRecolt = () => {
       );
 
       // Envoyer la requête POST pour déplacer le villageois
-      const token = "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2VG5aX1o4WlM2YTlYczJqckl4RTZLS0lNbjgyaTdxN3Z4cTRtY3dQOE13In0.eyJleHAiOjE3NDI4MTM0MjIsImlhdCI6MTc0MjY0MDYyMiwianRpIjoiZTdjMTA0YjQtY2UwMy00OTk0LWE1ZmItOWQwZmYzYWExMWE3IiwiaXNzIjoiaHR0cDovLzUxLjIxMC4xMTcuMjI6ODA4MS9yZWFsbXMvY29kZWxlbWFucyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1MmIwOGFiNS0yZmZmLTQ2NDEtYmNjNC0xZGQzZTFiMjdiOTYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJ3b2xvbG8tYmFja2VuZCIsInNlc3Npb25fc3RhdGUiOiIxYWQxMmZkZi1mYzI1LTQ3NDQtYTQwZC04NGRiYjFkODBjYjkiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtY29kZWxlbWFucyIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjFhZDEyZmRmLWZjMjUtNDc0NC1hNDBkLTg0ZGJiMWQ4MGNiOSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiYXRheSIsInRlYW1faWQiOiJlOGNlZDFhMi0wMWQzLTRhY2QtYTYxNC00OGQ0NTk3YWZiNzMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJsZXMtcHJvdGVjdGV1cnMtZHVyYWJsZXMiLCJnaXZlbl9uYW1lIjoiYXRheSJ9.dknHDd0j1BWG0xdDaMxoZcW_WSsTIrVYakObvRaFlIXW-8WNqlNPsEmyKisMpxZdYQG7T2i8YjH9Nyds3NBLowehn-3p68imCerXmdNHoQCHQ-tNMXy5vvYvf97kdSIFADsOu2LvwBq2IvzHV3_kQP5aqQXgNArnyqn36ktHrWjvoxkVuOm6xlbN-yPOnGOtxsP7X4l9nGxf8KIb84EXff7SRTbt6aJc_AlBWT5MgljsXoTYNiaKDiRS3XvYuOD7Z-0nz57FGkGObmLKmYkO48vo3VcaaarOM0zXOYd3WVyOpSviX5jmvz86NWysRitarAPUgH6r38BnJsqjTazZ7A";
-      const url = `http://51.210.117.22:8080/equipes/e8ced1a2-01d3-4acd-a614-48d4597afb73/villageois/${selectedCheckboxId}/demander-action`;
+      const token = "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2VG5aX1o4WlM2YTlYczJqckl4RTZLS0lNbjgyaTdxN3Z4cTRtY3dQOE13In0.eyJleHAiOjE3NDI4NjE1MTcsImlhdCI6MTc0MjY4ODcxNywianRpIjoiNzMwZWVmYTQtODQzNS00YjFlLWE0NWMtMzdiNjY5YTRlNTVhIiwiaXNzIjoiaHR0cDovLzUxLjIxMC4xMTcuMjI6ODA4MS9yZWFsbXMvY29kZWxlbWFucyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJlYTY2OTNlNi03MTJjLTRhMjYtYjU0OS05YmRhZTQ4MmJiMjgiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJ3b2xvbG8tYmFja2VuZCIsInNlc3Npb25fc3RhdGUiOiJjYmZkMjIzNS1lMTYzLTQ4Y2YtOTRkMi03MmE0ZDA5MGQ5NWMiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtY29kZWxlbWFucyIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6ImNiZmQyMjM1LWUxNjMtNDhjZi05NGQyLTcyYTRkMDkwZDk1YyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiYXRheSIsInRlYW1faWQiOiI1OTNhOGNjMS1iYmVjLTRjNGQtYTNhZi1lOTI2YzEzMjRlMzMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJsZXMtcHJvdGVjdGV1cnMtZHVyYWJsZXMtZGV1eCIsImdpdmVuX25hbWUiOiJhdGF5In0.jJ-MRMYihh8gI6BU_1J5KLc_VlyUFHTXt5b2T2D3DnlDkMxO62I4S0tDIr60EqLe_xRI3HwAFTVstnfsQMwefaAHpCmuzn-i333a4OFurTb9AK-P6o0Ptlij7GF58gk0l0iyOfn0W001xVwzCEKxmBfuD3u-9yyTdSGXeaGzxPhSkpJGBGwo7fDcRtLyRKr9UWpkCjg42UUFR3os1pdSqmQWY0HZ9OfJ1Wb9RfK2OXxG42f8hHlMHGemguh7pGuWGqXlditEjqBwDdcdQ_DNxjeRytJrgo_0p7kbZmXsb5gteY6aTHNUvBpTFjopPIF_HtlezvqV1449xvpOa_rlsg";
+      const url = `http://51.210.117.22:8080/equipes/593a8cc1-bbec-4c4d-a3af-e926c1324e33/villageois/${selectedCheckboxId}/demander-action`;
 
       const body = JSON.stringify({
         action: `DEPLACEMENT_${direction.toUpperCase()}`, 
@@ -127,58 +129,73 @@ const Grid_withRecolt = () => {
     }
   };
 
+  const [recolteEnCours, setRecolteEnCours] = useState(false);
+
   const autoRecolter = async () => {
     if (quantite <= 0 || type === "") {
       alert("Veuillez sélectionner une quantité et un type de récolte.");
       return;
     }
   
+    setRecolteEnCours(true); // Indique que la récolte est en cours
+  
     for (let i = 0; i < quantite; i++) {
       console.log(`Récolte automatique #${i + 1}`);
       await handleRecolter();
       await new Promise((resolve) => setTimeout(resolve, 12500)); // Attente de 12.5 secondes entre chaque récolte
     }
+  
+    setRecolteEnCours(false); // Réinitialiser l'état après la fin de la récolte
   };
   
-
-const handleRecolter = async () => {
-  if (selectedCheckboxId && quantite > 0 && type !== "") {
-    const villager = villagers.find((v) => v.idVillageois === selectedCheckboxId);
-    if (!villager) {
-      console.error("Aucun villageois sélectionné.");
-      return;
+  const handleRecolter = async () => {
+    if (selectedCheckboxId && quantite > 0 && type !== "") {
+      const villager = villagers.find((v) => v.idVillageois === selectedCheckboxId);
+      if (!villager) {
+        console.error("Aucun villageois sélectionné.");
+        return;
+      }
+  
+      const url = `http://51.210.117.22:8080/equipes/e8ced1a2-01d3-4acd-a614-48d4597afb73/villageois/${villager.idVillageois}/demander-action`;
+  
+      const body = {
+        action: 'RECOLTER',
+        reference: type, // Type de ressource (BOIS, FER, etc.)
+        details: {
+          quantite_recolte: 1, // Ici, on récolte 1 unité par itération
+        },
+      };
+  
+      const token = "your-token-here"; // Token should be securely stored or passed dynamically
+  
+      try {
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(body),
+        });
+  
+        if (response.ok) {
+          const text = await response.text(); // First, read the response as text
+          if (text) { // If the response text is not empty
+            const result = JSON.parse(text); // Then parse the text as JSON
+            console.log('Récolte réussie', result);
+          } else {
+            console.error('Réponse vide reçue');
+          }
+        } else {
+          console.error('Erreur lors de la récolte, status:', response.status);
+        }
+      } catch (error) {
+        console.error('Erreur lors de la requête:', error);
+      }
     }
-
-    const url = `http://51.210.117.22:8080/equipes/e8ced1a2-01d3-4acd-a614-48d4597afb73/villageois/${villager.idVillageois}/demander-action`;
-
-    const body = {
-      action: 'RECOLTER',
-      reference: type, // Type de ressource (BOIS, FER, etc.)
-      details: {
-        quantite_recolte: 1, // Ici, on récolte 1 unité par itération
-      },
-    };
-
-    const token = "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI2VG5aX1o4WlM2YTlYczJqckl4RTZLS0lNbjgyaTdxN3Z4cTRtY3dQOE13In0.eyJleHAiOjE3NDI4MTM0MjIsImlhdCI6MTc0MjY0MDYyMiwianRpIjoiZTdjMTA0YjQtY2UwMy00OTk0LWE1ZmItOWQwZmYzYWExMWE3IiwiaXNzIjoiaHR0cDovLzUxLjIxMC4xMTcuMjI6ODA4MS9yZWFsbXMvY29kZWxlbWFucyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiI1MmIwOGFiNS0yZmZmLTQ2NDEtYmNjNC0xZGQzZTFiMjdiOTYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJ3b2xvbG8tYmFja2VuZCIsInNlc3Npb25fc3RhdGUiOiIxYWQxMmZkZi1mYzI1LTQ3NDQtYTQwZC04NGRiYjFkODBjYjkiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsImRlZmF1bHQtcm9sZXMtY29kZWxlbWFucyIsInVtYV9hdXRob3JpemF0aW9uIiwidXNlciJdfSwicmVzb3VyY2VfYWNjZXNzIjp7ImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoiZW1haWwgcHJvZmlsZSIsInNpZCI6IjFhZDEyZmRmLWZjMjUtNDc0NC1hNDBkLTg0ZGJiMWQ4MGNiOSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJuYW1lIjoiYXRheSIsInRlYW1faWQiOiJlOGNlZDFhMi0wMWQzLTRhY2QtYTYxNC00OGQ0NTk3YWZiNzMiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJsZXMtcHJvdGVjdGV1cnMtZHVyYWJsZXMiLCJnaXZlbl9uYW1lIjoiYXRheSJ9.dknHDd0j1BWG0xdDaMxoZcW_WSsTIrVYakObvRaFlIXW-8WNqlNPsEmyKisMpxZdYQG7T2i8YjH9Nyds3NBLowehn-3p68imCerXmdNHoQCHQ-tNMXy5vvYvf97kdSIFADsOu2LvwBq2IvzHV3_kQP5aqQXgNArnyqn36ktHrWjvoxkVuOm6xlbN-yPOnGOtxsP7X4l9nGxf8KIb84EXff7SRTbt6aJc_AlBWT5MgljsXoTYNiaKDiRS3XvYuOD7Z-0nz57FGkGObmLKmYkO48vo3VcaaarOM0zXOYd3WVyOpSviX5jmvz86NWysRitarAPUgH6r38BnJsqjTazZ7A";
-
-    const response = await fetch(url, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    });
-
-    if (response.ok) {
-      const result = await response.json();
-      console.log('Récolte réussie', result);
-    } else {
-      console.error('Erreur lors de la récolte');
-    }
-  }
-};
-
+  };
+  
+  
 
 return (
   <div className="flex justify-center items-center min-h-screen bg-gray-100">
